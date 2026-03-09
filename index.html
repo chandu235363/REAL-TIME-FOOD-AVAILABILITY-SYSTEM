@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Real-Time Food Availability System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>Real-Time Food Availability System</h2>
+        <p>Online Menu & Restaurant Inventory Hub</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection(event, 'home')" class="active-nav">Live Menu</button>
+        <button onclick="showSection(event, 'search')">Search Item</button>
+        <button onclick="showSection(event, 'admin')">Admin Portal</button>
+    </nav>
+
+    <section id="home" class="active">
+        <div class="card">
+            <h3>Global Food Inventory</h3>
+
+            <table id="inventoryTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Item Name</th>
+                        <th>Restaurant</th>
+                        <th>Status</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+
+                <tbody id="foodListBody"></tbody>
+
+            </table>
+        </div>
+    </section>
+
+    <section id="search">
+        <div class="card">
+
+            <h3>Check Availability</h3>
+
+            <input type="text" id="searchFoodID" placeholder="Enter Food Item ID">
+
+            <button class="btn" onclick="searchFood()">Find Item</button>
+
+            <div id="searchResult"></div>
+
+        </div>
+    </section>
+
+    <section id="admin">
+        <div class="card">
+
+            <h3>Admin Authentication</h3>
+
+            <input type="text" id="adminID" placeholder="Admin ID">
+
+            <input type="password" id="adminPass" placeholder="Password">
+
+            <hr>
+
+            <h3>Add New Food Entry</h3>
+
+            <input type="text" id="foodID" placeholder="Food ID">
+
+            <input type="text" id="foodName" placeholder="Food Name">
+
+            <input type="text" id="foodRestaurant" placeholder="Restaurant Name">
+
+            <select id="foodStatus">
+
+                <option value="Available">Available</option>
+
+                <option value="Limited">Limited Stock</option>
+
+                <option value="Sold Out">Sold Out</option>
+
+            </select>
+
+            <input type="text" id="foodCategory" placeholder="Category">
+
+            <button class="btn" onclick="addFoodItem()">Publish to Menu</button>
+
+            <h3>Remove Item</h3>
+
+            <input type="text" id="deleteID" placeholder="Food ID">
+
+            <button class="btn delete-btn" onclick="deleteFoodItem()">Delete Food Item</button>
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

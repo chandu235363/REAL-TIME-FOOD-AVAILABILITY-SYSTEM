@@ -1,0 +1,142 @@
+:root {
+    --dark-charcoal: #1a1a1a;
+    --food-orange: #f97316;
+    --orange-hover: #ea580c;
+    --bg-light: #f8fafc;
+    --white: #ffffff;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--dark-charcoal);
+}
+
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--food-orange);
+}
+
+header h2 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    color: var(--food-orange);
+}
+
+nav {
+    background: white;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav button {
+    background: none;
+    border: none;
+    padding: 20px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+nav button:hover {
+    color: var(--food-orange);
+}
+
+nav button.active-nav {
+    color: var(--food-orange);
+    border-bottom: 3px solid var(--food-orange);
+}
+
+section {
+    display: none;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.active {
+    display: block;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--food-orange);
+}
+
+h3 {
+    border-bottom: 2px solid var(--food-orange);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+input,
+select {
+    padding: 12px;
+    width: 100%;
+    margin: 10px 0 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+
+.btn {
+    background: var(--dark-charcoal);
+    color: var(--food-orange);
+    padding: 15px;
+    border: 1px solid var(--food-orange);
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn:hover {
+    background: var(--food-orange);
+    color: white;
+}
+
+.delete-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: white;
+}
+
+th {
+    background: var(--dark-charcoal);
+    color: var(--food-orange);
+    padding: 15px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.restaurant-tag {
+    color: var(--food-orange);
+    font-weight: bold;
+}
