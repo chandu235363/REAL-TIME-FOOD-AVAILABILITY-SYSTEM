@@ -39,7 +39,7 @@ function addFoodItem() {
     let inventory = JSON.parse(localStorage.getItem("foodInventory")) || {};
 
     if (inventory[id]) {
-        alert("A food item with this ID already exists. Please use a different ID.");
+        alert("A food item with this ID already exists.");
         return;
     }
 
@@ -64,7 +64,7 @@ function deleteFoodItem() {
         localStorage.setItem("foodInventory", JSON.stringify(inventory));
         alert("Food item deleted successfully");
     } else {
-        alert("Food item with the given ID does not exist");
+        alert("Food item not found");
     }
 
     displayInventory();
@@ -89,14 +89,18 @@ function searchFood() {
         result.innerHTML = "Item not found";
 
     }
-
 }
 
 function displayInventory() {
 
+    const inventory = JSON.parse(localStorage.getItem("foodInventory")) || {};
+
+    const tbody = document.getElementById("foodListBody");
+
     tbody.innerHTML = "";
 
     let rows = "";
+
     for (let id in inventory) {
 
         rows += `<tr>
@@ -106,14 +110,9 @@ function displayInventory() {
 <td>${inventory[id].status}</td>
 <td>${inventory[id].category}</td>
 </tr>`;
-
     }
+
     tbody.innerHTML = rows;
-    <td>${inventory[id].category}</td>
-</tr > `;
-
-    }
-
 }
 
 displayInventory();
